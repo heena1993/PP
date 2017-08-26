@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertAdminDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CityId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StateId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CountryId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pincode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Age" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BirthDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Photo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertAdminDetailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditAdminDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CityId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StateId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CountryId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pincode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Age" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BirthDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Photo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditAdminDetailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAdminDetail">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAdminDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAdminDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminDetailByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminDetailByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAdminDetailByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAdminDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAdminDetailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckUSerExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUSerExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckUSerExistResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdminChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdminChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AdminChangePasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdminForgotPasswordDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdminForgotPasswordDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdminForgotPasswordDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertAdminDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertAdminDetail" />
+  </wsdl:message>
+  <wsdl:message name="InsertAdminDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertAdminDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditAdminDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:EditAdminDetail" />
+  </wsdl:message>
+  <wsdl:message name="EditAdminDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:EditAdminDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAdminDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAdminDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminDetailByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAdminDetailByID" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminDetailByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAdminDetailByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAdminDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAdminDetail" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAdminDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAdminDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUSerExistSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUSerExist" />
+  </wsdl:message>
+  <wsdl:message name="CheckUSerExistSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUSerExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:AdminChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="AdminChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:AdminChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdminForgotPasswordDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:AdminForgotPasswordDetails" />
+  </wsdl:message>
+  <wsdl:message name="AdminForgotPasswordDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:AdminForgotPasswordDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AdminRegistrationSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAdminDetail">
+      <wsdl:input message="tns:InsertAdminDetailSoapIn" />
+      <wsdl:output message="tns:InsertAdminDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAdminDetail">
+      <wsdl:input message="tns:EditAdminDetailSoapIn" />
+      <wsdl:output message="tns:EditAdminDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDetail">
+      <wsdl:input message="tns:GetAdminDetailSoapIn" />
+      <wsdl:output message="tns:GetAdminDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDetailByID">
+      <wsdl:input message="tns:GetAdminDetailByIDSoapIn" />
+      <wsdl:output message="tns:GetAdminDetailByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAdminDetail">
+      <wsdl:input message="tns:DeleteAdminDetailSoapIn" />
+      <wsdl:output message="tns:DeleteAdminDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUSerExist">
+      <wsdl:input message="tns:CheckUSerExistSoapIn" />
+      <wsdl:output message="tns:CheckUSerExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminChangePassword">
+      <wsdl:input message="tns:AdminChangePasswordSoapIn" />
+      <wsdl:output message="tns:AdminChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdminForgotPasswordDetails">
+      <wsdl:input message="tns:AdminForgotPasswordDetailsSoapIn" />
+      <wsdl:output message="tns:AdminForgotPasswordDetailsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdminRegistrationSoap" type="tns:AdminRegistrationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAdminDetail">
+      <soap:operation soapAction="http://tempuri.org/InsertAdminDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAdminDetail">
+      <soap:operation soapAction="http://tempuri.org/EditAdminDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDetail">
+      <soap:operation soapAction="http://tempuri.org/GetAdminDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDetailByID">
+      <soap:operation soapAction="http://tempuri.org/GetAdminDetailByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAdminDetail">
+      <soap:operation soapAction="http://tempuri.org/DeleteAdminDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUSerExist">
+      <soap:operation soapAction="http://tempuri.org/CheckUSerExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminChangePassword">
+      <soap:operation soapAction="http://tempuri.org/AdminChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminForgotPasswordDetails">
+      <soap:operation soapAction="http://tempuri.org/AdminForgotPasswordDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AdminRegistrationSoap12" type="tns:AdminRegistrationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAdminDetail">
+      <soap12:operation soapAction="http://tempuri.org/InsertAdminDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAdminDetail">
+      <soap12:operation soapAction="http://tempuri.org/EditAdminDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetAdminDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDetailByID">
+      <soap12:operation soapAction="http://tempuri.org/GetAdminDetailByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAdminDetail">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAdminDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUSerExist">
+      <soap12:operation soapAction="http://tempuri.org/CheckUSerExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/AdminChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdminForgotPasswordDetails">
+      <soap12:operation soapAction="http://tempuri.org/AdminForgotPasswordDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdminRegistration">
+    <wsdl:port name="AdminRegistrationSoap" binding="tns:AdminRegistrationSoap">
+      <soap:address location="https://www.booking-adviser.com/AdminRegistration.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AdminRegistrationSoap12" binding="tns:AdminRegistrationSoap12">
+      <soap12:address location="https://www.booking-adviser.com/AdminRegistration.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

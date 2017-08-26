@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getcitybind">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StateId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getcitybindResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getcitybindResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getcity">
+        <s:complexType />
+      </s:element>
+      <s:element name="getcityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getcityResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStatebind">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStatebindResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStatebindResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getContrybind">
+        <s:complexType />
+      </s:element>
+      <s:element name="getContrybindResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getContrybindResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BindDatatoDropdown">
+        <s:complexType />
+      </s:element>
+      <s:element name="BindDatatoDropdownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BindDatatoDropdownResult" type="tns:ArrayOfCityDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCityDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CityDetails" nillable="true" type="tns:CityDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CityDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CityId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="getcitybindSoapIn">
+    <wsdl:part name="parameters" element="tns:getcitybind" />
+  </wsdl:message>
+  <wsdl:message name="getcitybindSoapOut">
+    <wsdl:part name="parameters" element="tns:getcitybindResponse" />
+  </wsdl:message>
+  <wsdl:message name="getcitySoapIn">
+    <wsdl:part name="parameters" element="tns:getcity" />
+  </wsdl:message>
+  <wsdl:message name="getcitySoapOut">
+    <wsdl:part name="parameters" element="tns:getcityResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStatebindSoapIn">
+    <wsdl:part name="parameters" element="tns:getStatebind" />
+  </wsdl:message>
+  <wsdl:message name="getStatebindSoapOut">
+    <wsdl:part name="parameters" element="tns:getStatebindResponse" />
+  </wsdl:message>
+  <wsdl:message name="getContrybindSoapIn">
+    <wsdl:part name="parameters" element="tns:getContrybind" />
+  </wsdl:message>
+  <wsdl:message name="getContrybindSoapOut">
+    <wsdl:part name="parameters" element="tns:getContrybindResponse" />
+  </wsdl:message>
+  <wsdl:message name="BindDatatoDropdownSoapIn">
+    <wsdl:part name="parameters" element="tns:BindDatatoDropdown" />
+  </wsdl:message>
+  <wsdl:message name="BindDatatoDropdownSoapOut">
+    <wsdl:part name="parameters" element="tns:BindDatatoDropdownResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CityStateCountryBindSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getcitybind">
+      <wsdl:input message="tns:getcitybindSoapIn" />
+      <wsdl:output message="tns:getcitybindSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getcity">
+      <wsdl:input message="tns:getcitySoapIn" />
+      <wsdl:output message="tns:getcitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatebind">
+      <wsdl:input message="tns:getStatebindSoapIn" />
+      <wsdl:output message="tns:getStatebindSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getContrybind">
+      <wsdl:input message="tns:getContrybindSoapIn" />
+      <wsdl:output message="tns:getContrybindSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BindDatatoDropdown">
+      <wsdl:input message="tns:BindDatatoDropdownSoapIn" />
+      <wsdl:output message="tns:BindDatatoDropdownSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CityStateCountryBindSoap" type="tns:CityStateCountryBindSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getcitybind">
+      <soap:operation soapAction="http://tempuri.org/getcitybind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getcity">
+      <soap:operation soapAction="http://tempuri.org/getcity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatebind">
+      <soap:operation soapAction="http://tempuri.org/getStatebind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContrybind">
+      <soap:operation soapAction="http://tempuri.org/getContrybind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BindDatatoDropdown">
+      <soap:operation soapAction="http://tempuri.org/BindDatatoDropdown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CityStateCountryBindSoap12" type="tns:CityStateCountryBindSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getcitybind">
+      <soap12:operation soapAction="http://tempuri.org/getcitybind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getcity">
+      <soap12:operation soapAction="http://tempuri.org/getcity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatebind">
+      <soap12:operation soapAction="http://tempuri.org/getStatebind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContrybind">
+      <soap12:operation soapAction="http://tempuri.org/getContrybind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BindDatatoDropdown">
+      <soap12:operation soapAction="http://tempuri.org/BindDatatoDropdown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CityStateCountryBind">
+    <wsdl:port name="CityStateCountryBindSoap" binding="tns:CityStateCountryBindSoap">
+      <soap:address location="https://www.booking-adviser.com/CItyStateCountryBind.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CityStateCountryBindSoap12" binding="tns:CityStateCountryBindSoap12">
+      <soap12:address location="https://www.booking-adviser.com/CItyStateCountryBind.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

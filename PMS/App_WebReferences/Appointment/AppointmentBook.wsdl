@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertAppointmentDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PatientId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppoinmentStatus" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertAppointmentDetailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditAppointmentDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppoinmentId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PatientId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditAppointmentDetailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditAppointmentstatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppoinmentId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppoinmentStatus" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditAppointmentstatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAppointmentDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAppointmentDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppointmentDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByPatientID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PatientId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByPatientIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppointmentDetailsByPatientIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByTodayDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByTodayDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppointmentDetailsByTodayDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByFutureDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByFutureDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppointmentDetailsByFutureDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByTodayDateDoctorwise">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByTodayDateDoctorwiseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppointmentDetailsByTodayDateDoctorwiseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByFutureDateDoctorwise">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentDetailsByFutureDateDoctorwiseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppointmentDetailsByFutureDateDoctorwiseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAppointmentDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppoinmentId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAppointmentDetailsResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertAppointmentDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertAppointmentDetail" />
+  </wsdl:message>
+  <wsdl:message name="InsertAppointmentDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertAppointmentDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditAppointmentDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:EditAppointmentDetail" />
+  </wsdl:message>
+  <wsdl:message name="EditAppointmentDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:EditAppointmentDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditAppointmentstatusSoapIn">
+    <wsdl:part name="parameters" element="tns:EditAppointmentstatus" />
+  </wsdl:message>
+  <wsdl:message name="EditAppointmentstatusSoapOut">
+    <wsdl:part name="parameters" element="tns:EditAppointmentstatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByPatientIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByPatientID" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByPatientIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByPatientIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByTodayDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByTodayDate" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByTodayDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByTodayDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByFutureDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByFutureDate" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByFutureDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByFutureDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByTodayDateDoctorwiseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByTodayDateDoctorwise" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByTodayDateDoctorwiseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByTodayDateDoctorwiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByFutureDateDoctorwiseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByFutureDateDoctorwise" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentDetailsByFutureDateDoctorwiseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppointmentDetailsByFutureDateDoctorwiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAppointmentDetails" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAppointmentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AppointmentBookSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAppointmentDetail">
+      <wsdl:input message="tns:InsertAppointmentDetailSoapIn" />
+      <wsdl:output message="tns:InsertAppointmentDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAppointmentDetail">
+      <wsdl:input message="tns:EditAppointmentDetailSoapIn" />
+      <wsdl:output message="tns:EditAppointmentDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAppointmentstatus">
+      <wsdl:input message="tns:EditAppointmentstatusSoapIn" />
+      <wsdl:output message="tns:EditAppointmentstatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetails">
+      <wsdl:input message="tns:GetAppointmentDetailsSoapIn" />
+      <wsdl:output message="tns:GetAppointmentDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByPatientID">
+      <wsdl:input message="tns:GetAppointmentDetailsByPatientIDSoapIn" />
+      <wsdl:output message="tns:GetAppointmentDetailsByPatientIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByTodayDate">
+      <wsdl:input message="tns:GetAppointmentDetailsByTodayDateSoapIn" />
+      <wsdl:output message="tns:GetAppointmentDetailsByTodayDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByFutureDate">
+      <wsdl:input message="tns:GetAppointmentDetailsByFutureDateSoapIn" />
+      <wsdl:output message="tns:GetAppointmentDetailsByFutureDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByTodayDateDoctorwise">
+      <wsdl:input message="tns:GetAppointmentDetailsByTodayDateDoctorwiseSoapIn" />
+      <wsdl:output message="tns:GetAppointmentDetailsByTodayDateDoctorwiseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByFutureDateDoctorwise">
+      <wsdl:input message="tns:GetAppointmentDetailsByFutureDateDoctorwiseSoapIn" />
+      <wsdl:output message="tns:GetAppointmentDetailsByFutureDateDoctorwiseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointmentDetails">
+      <wsdl:input message="tns:DeleteAppointmentDetailsSoapIn" />
+      <wsdl:output message="tns:DeleteAppointmentDetailsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AppointmentBookSoap" type="tns:AppointmentBookSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAppointmentDetail">
+      <soap:operation soapAction="http://tempuri.org/InsertAppointmentDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAppointmentDetail">
+      <soap:operation soapAction="http://tempuri.org/EditAppointmentDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAppointmentstatus">
+      <soap:operation soapAction="http://tempuri.org/EditAppointmentstatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetails">
+      <soap:operation soapAction="http://tempuri.org/GetAppointmentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByPatientID">
+      <soap:operation soapAction="http://tempuri.org/GetAppointmentDetailsByPatientID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByTodayDate">
+      <soap:operation soapAction="http://tempuri.org/GetAppointmentDetailsByTodayDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByFutureDate">
+      <soap:operation soapAction="http://tempuri.org/GetAppointmentDetailsByFutureDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByTodayDateDoctorwise">
+      <soap:operation soapAction="http://tempuri.org/GetAppointmentDetailsByTodayDateDoctorwise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByFutureDateDoctorwise">
+      <soap:operation soapAction="http://tempuri.org/GetAppointmentDetailsByFutureDateDoctorwise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointmentDetails">
+      <soap:operation soapAction="http://tempuri.org/DeleteAppointmentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AppointmentBookSoap12" type="tns:AppointmentBookSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAppointmentDetail">
+      <soap12:operation soapAction="http://tempuri.org/InsertAppointmentDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAppointmentDetail">
+      <soap12:operation soapAction="http://tempuri.org/EditAppointmentDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAppointmentstatus">
+      <soap12:operation soapAction="http://tempuri.org/EditAppointmentstatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetAppointmentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByPatientID">
+      <soap12:operation soapAction="http://tempuri.org/GetAppointmentDetailsByPatientID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByTodayDate">
+      <soap12:operation soapAction="http://tempuri.org/GetAppointmentDetailsByTodayDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByFutureDate">
+      <soap12:operation soapAction="http://tempuri.org/GetAppointmentDetailsByFutureDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByTodayDateDoctorwise">
+      <soap12:operation soapAction="http://tempuri.org/GetAppointmentDetailsByTodayDateDoctorwise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentDetailsByFutureDateDoctorwise">
+      <soap12:operation soapAction="http://tempuri.org/GetAppointmentDetailsByFutureDateDoctorwise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointmentDetails">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAppointmentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppointmentBook">
+    <wsdl:port name="AppointmentBookSoap" binding="tns:AppointmentBookSoap">
+      <soap:address location="https://www.booking-adviser.com/AppointmentBook.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AppointmentBookSoap12" binding="tns:AppointmentBookSoap12">
+      <soap12:address location="https://www.booking-adviser.com/AppointmentBook.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

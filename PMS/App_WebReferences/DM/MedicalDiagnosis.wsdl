@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertMedicineDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicinePotency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineDoes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineUnit" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertMedicineDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditMedicineDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MedicineId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicinePotency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineDoes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedicineUnit" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditMedicineDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMedicineDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMedicineDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMedicineDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMedicineDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MedicineId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMedicineDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertTestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TestDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTestDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditTestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TestId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TestName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TestDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditTestDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTestDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTestDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTestDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertDieasesDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DieasesName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DieasesDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDieasesDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditDieasesDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DieasesId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DieasesName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DieasesDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditDieasesDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDieasesDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDieasesDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDieasesDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDieasesDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DieasesId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDieasesDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertDMDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DieasesId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MedicineId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDMDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditDMDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DmId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DieasesId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MedicineId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyBy" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditDMDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDMDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDMDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDMDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDMDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DmId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDMDetailsResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertMedicineDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertMedicineDetails" />
+  </wsdl:message>
+  <wsdl:message name="InsertMedicineDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertMedicineDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditMedicineDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:EditMedicineDetails" />
+  </wsdl:message>
+  <wsdl:message name="EditMedicineDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:EditMedicineDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMedicineDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMedicineDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetMedicineDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMedicineDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMedicineDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMedicineDetails" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMedicineDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMedicineDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertTestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertTestDetails" />
+  </wsdl:message>
+  <wsdl:message name="InsertTestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertTestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditTestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:EditTestDetails" />
+  </wsdl:message>
+  <wsdl:message name="EditTestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:EditTestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTestDetails" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDieasesDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDieasesDetails" />
+  </wsdl:message>
+  <wsdl:message name="InsertDieasesDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDieasesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditDieasesDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:EditDieasesDetails" />
+  </wsdl:message>
+  <wsdl:message name="EditDieasesDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:EditDieasesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDieasesDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDieasesDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetDieasesDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDieasesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDieasesDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDieasesDetails" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDieasesDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDieasesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDMDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDMDetails" />
+  </wsdl:message>
+  <wsdl:message name="InsertDMDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDMDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditDMDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:EditDMDetails" />
+  </wsdl:message>
+  <wsdl:message name="EditDMDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:EditDMDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDMDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDMDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetDMDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDMDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDMDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDMDetails" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDMDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDMDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MedicalDiagnosisSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMedicineDetails">
+      <wsdl:input message="tns:InsertMedicineDetailsSoapIn" />
+      <wsdl:output message="tns:InsertMedicineDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditMedicineDetails">
+      <wsdl:input message="tns:EditMedicineDetailsSoapIn" />
+      <wsdl:output message="tns:EditMedicineDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicineDetails">
+      <wsdl:input message="tns:GetMedicineDetailsSoapIn" />
+      <wsdl:output message="tns:GetMedicineDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMedicineDetails">
+      <wsdl:input message="tns:DeleteMedicineDetailsSoapIn" />
+      <wsdl:output message="tns:DeleteMedicineDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTestDetails">
+      <wsdl:input message="tns:InsertTestDetailsSoapIn" />
+      <wsdl:output message="tns:InsertTestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditTestDetails">
+      <wsdl:input message="tns:EditTestDetailsSoapIn" />
+      <wsdl:output message="tns:EditTestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDetails">
+      <wsdl:input message="tns:GetTestDetailsSoapIn" />
+      <wsdl:output message="tns:GetTestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTestDetails">
+      <wsdl:input message="tns:DeleteTestDetailsSoapIn" />
+      <wsdl:output message="tns:DeleteTestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDieasesDetails">
+      <wsdl:input message="tns:InsertDieasesDetailsSoapIn" />
+      <wsdl:output message="tns:InsertDieasesDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDieasesDetails">
+      <wsdl:input message="tns:EditDieasesDetailsSoapIn" />
+      <wsdl:output message="tns:EditDieasesDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDieasesDetails">
+      <wsdl:input message="tns:GetDieasesDetailsSoapIn" />
+      <wsdl:output message="tns:GetDieasesDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDieasesDetails">
+      <wsdl:input message="tns:DeleteDieasesDetailsSoapIn" />
+      <wsdl:output message="tns:DeleteDieasesDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDMDetails">
+      <wsdl:input message="tns:InsertDMDetailsSoapIn" />
+      <wsdl:output message="tns:InsertDMDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDMDetails">
+      <wsdl:input message="tns:EditDMDetailsSoapIn" />
+      <wsdl:output message="tns:EditDMDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMDetails">
+      <wsdl:input message="tns:GetDMDetailsSoapIn" />
+      <wsdl:output message="tns:GetDMDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDMDetails">
+      <wsdl:input message="tns:DeleteDMDetailsSoapIn" />
+      <wsdl:output message="tns:DeleteDMDetailsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MedicalDiagnosisSoap" type="tns:MedicalDiagnosisSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMedicineDetails">
+      <soap:operation soapAction="http://tempuri.org/InsertMedicineDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMedicineDetails">
+      <soap:operation soapAction="http://tempuri.org/EditMedicineDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicineDetails">
+      <soap:operation soapAction="http://tempuri.org/GetMedicineDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMedicineDetails">
+      <soap:operation soapAction="http://tempuri.org/DeleteMedicineDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTestDetails">
+      <soap:operation soapAction="http://tempuri.org/InsertTestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditTestDetails">
+      <soap:operation soapAction="http://tempuri.org/EditTestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDetails">
+      <soap:operation soapAction="http://tempuri.org/GetTestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTestDetails">
+      <soap:operation soapAction="http://tempuri.org/DeleteTestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDieasesDetails">
+      <soap:operation soapAction="http://tempuri.org/InsertDieasesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDieasesDetails">
+      <soap:operation soapAction="http://tempuri.org/EditDieasesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDieasesDetails">
+      <soap:operation soapAction="http://tempuri.org/GetDieasesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDieasesDetails">
+      <soap:operation soapAction="http://tempuri.org/DeleteDieasesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDMDetails">
+      <soap:operation soapAction="http://tempuri.org/InsertDMDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDMDetails">
+      <soap:operation soapAction="http://tempuri.org/EditDMDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMDetails">
+      <soap:operation soapAction="http://tempuri.org/GetDMDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDMDetails">
+      <soap:operation soapAction="http://tempuri.org/DeleteDMDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MedicalDiagnosisSoap12" type="tns:MedicalDiagnosisSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMedicineDetails">
+      <soap12:operation soapAction="http://tempuri.org/InsertMedicineDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMedicineDetails">
+      <soap12:operation soapAction="http://tempuri.org/EditMedicineDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicineDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetMedicineDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMedicineDetails">
+      <soap12:operation soapAction="http://tempuri.org/DeleteMedicineDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTestDetails">
+      <soap12:operation soapAction="http://tempuri.org/InsertTestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditTestDetails">
+      <soap12:operation soapAction="http://tempuri.org/EditTestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetTestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTestDetails">
+      <soap12:operation soapAction="http://tempuri.org/DeleteTestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDieasesDetails">
+      <soap12:operation soapAction="http://tempuri.org/InsertDieasesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDieasesDetails">
+      <soap12:operation soapAction="http://tempuri.org/EditDieasesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDieasesDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetDieasesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDieasesDetails">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDieasesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDMDetails">
+      <soap12:operation soapAction="http://tempuri.org/InsertDMDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDMDetails">
+      <soap12:operation soapAction="http://tempuri.org/EditDMDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetDMDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDMDetails">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDMDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MedicalDiagnosis">
+    <wsdl:port name="MedicalDiagnosisSoap" binding="tns:MedicalDiagnosisSoap">
+      <soap:address location="https://www.booking-adviser.com/MedicalDiagnosis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MedicalDiagnosisSoap12" binding="tns:MedicalDiagnosisSoap12">
+      <soap12:address location="https://www.booking-adviser.com/MedicalDiagnosis.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

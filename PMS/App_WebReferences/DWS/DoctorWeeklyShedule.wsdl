@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDoctorWeeklyScheduleDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="WeekStartDateEndDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Day" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Morning" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Evening" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDoctorWeeklyScheduleDetailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditDoctorWeeklyScheduleDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorWeeklyScheduleId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="WeekStartDateEndDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Day" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Morning" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Evening" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditDoctorWeeklyScheduleDetailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorsWeeklyScheDuleDetail">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDoctorsWeeklyScheDuleDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorsWeeklyScheDuleDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WeekStartDateEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorsWeeklyScheDuleDetailByDoctorsID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorsWeeklyScheDuleDetailByDoctorsIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorsWeeklyScheDuleDetailByDoctorsIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorWeeklyDetail">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDoctorWeeklyDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorWeeklyDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorWeeklyByWeekDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="WeekStartDateEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorWeeklyByWeekDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorWeeklyByWeekDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDoctorWeeklyScheduleDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDoctorWeeklyScheduleDetail" />
+  </wsdl:message>
+  <wsdl:message name="InsertDoctorWeeklyScheduleDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDoctorWeeklyScheduleDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditDoctorWeeklyScheduleDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:EditDoctorWeeklyScheduleDetail" />
+  </wsdl:message>
+  <wsdl:message name="EditDoctorWeeklyScheduleDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:EditDoctorWeeklyScheduleDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorsWeeklyScheDuleDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctorsWeeklyScheDuleDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorsWeeklyScheDuleDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorsWeeklyScheDuleDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDate" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorsWeeklyScheDuleDetailByDoctorsIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctorsWeeklyScheDuleDetailByDoctorsID" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorsWeeklyScheDuleDetailByDoctorsIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorsWeeklyScheDuleDetailByDoctorsIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorWeeklyDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctorWeeklyDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorWeeklyDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorWeeklyDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorWeeklyByWeekDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctorWeeklyByWeekDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorWeeklyByWeekDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorWeeklyByWeekDetailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DoctorWeeklySheduleSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDoctorWeeklyScheduleDetail">
+      <wsdl:input message="tns:InsertDoctorWeeklyScheduleDetailSoapIn" />
+      <wsdl:output message="tns:InsertDoctorWeeklyScheduleDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDoctorWeeklyScheduleDetail">
+      <wsdl:input message="tns:EditDoctorWeeklyScheduleDetailSoapIn" />
+      <wsdl:output message="tns:EditDoctorWeeklyScheduleDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeDetail">
+      <wsdl:input message="tns:GetTimeDetailSoapIn" />
+      <wsdl:output message="tns:GetTimeDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsWeeklyScheDuleDetail">
+      <wsdl:input message="tns:GetDoctorsWeeklyScheDuleDetailSoapIn" />
+      <wsdl:output message="tns:GetDoctorsWeeklyScheDuleDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDate">
+      <wsdl:input message="tns:GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDateSoapIn" />
+      <wsdl:output message="tns:GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsWeeklyScheDuleDetailByDoctorsID">
+      <wsdl:input message="tns:GetDoctorsWeeklyScheDuleDetailByDoctorsIDSoapIn" />
+      <wsdl:output message="tns:GetDoctorsWeeklyScheDuleDetailByDoctorsIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorWeeklyDetail">
+      <wsdl:input message="tns:GetDoctorWeeklyDetailSoapIn" />
+      <wsdl:output message="tns:GetDoctorWeeklyDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorWeeklyByWeekDetail">
+      <wsdl:input message="tns:GetDoctorWeeklyByWeekDetailSoapIn" />
+      <wsdl:output message="tns:GetDoctorWeeklyByWeekDetailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DoctorWeeklySheduleSoap" type="tns:DoctorWeeklySheduleSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDoctorWeeklyScheduleDetail">
+      <soap:operation soapAction="http://tempuri.org/InsertDoctorWeeklyScheduleDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDoctorWeeklyScheduleDetail">
+      <soap:operation soapAction="http://tempuri.org/EditDoctorWeeklyScheduleDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeDetail">
+      <soap:operation soapAction="http://tempuri.org/GetTimeDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsWeeklyScheDuleDetail">
+      <soap:operation soapAction="http://tempuri.org/GetDoctorsWeeklyScheDuleDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDate">
+      <soap:operation soapAction="http://tempuri.org/GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsWeeklyScheDuleDetailByDoctorsID">
+      <soap:operation soapAction="http://tempuri.org/GetDoctorsWeeklyScheDuleDetailByDoctorsID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorWeeklyDetail">
+      <soap:operation soapAction="http://tempuri.org/GetDoctorWeeklyDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorWeeklyByWeekDetail">
+      <soap:operation soapAction="http://tempuri.org/GetDoctorWeeklyByWeekDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DoctorWeeklySheduleSoap12" type="tns:DoctorWeeklySheduleSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDoctorWeeklyScheduleDetail">
+      <soap12:operation soapAction="http://tempuri.org/InsertDoctorWeeklyScheduleDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDoctorWeeklyScheduleDetail">
+      <soap12:operation soapAction="http://tempuri.org/EditDoctorWeeklyScheduleDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetTimeDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsWeeklyScheDuleDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctorsWeeklyScheDuleDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDate">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctorsWeeklyScheDuleDetailByWeekStartDateEndDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsWeeklyScheDuleDetailByDoctorsID">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctorsWeeklyScheDuleDetailByDoctorsID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorWeeklyDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctorWeeklyDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorWeeklyByWeekDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctorWeeklyByWeekDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DoctorWeeklyShedule">
+    <wsdl:port name="DoctorWeeklySheduleSoap" binding="tns:DoctorWeeklySheduleSoap">
+      <soap:address location="https://www.booking-adviser.com/DoctorWeeklyShedule.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DoctorWeeklySheduleSoap12" binding="tns:DoctorWeeklySheduleSoap12">
+      <soap12:address location="https://www.booking-adviser.com/DoctorWeeklyShedule.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
